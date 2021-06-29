@@ -1,0 +1,183 @@
+// $background-color: rgba(173, 210, 254, 1);
+// 薄青
+// $background-color: #91B493;
+// 灰樓
+$background-color: #D7C4BB;
+// 藤黃
+$theme-color: #FFC408;
+// ps. html, body 顏色是用 #fcfcfc 稿紙白
+
+header{
+  img.imgFixed {
+    position: fixed;
+    z-index: -1;
+    top: 40vh;
+    transform: translateY(-55%);
+    object-fit: cover;
+  }
+} 
+
+.imgContainer {
+  h1{
+    letter-spacing: 2rem;
+    text-indent: 2rem;
+  }
+  .h5{ 
+    letter-spacing: 0.8rem;
+    text-indent: 0.8rem;
+  }
+  border: none;
+  margin: 0;
+  padding: 0;
+  height: 80vh;
+  position: absolute;
+  clip: rect(0, auto, 80vh, 0);
+  top: -80vh;
+  .bgGradient{
+    position: absolute;
+    display: block;
+    bottom: 0;
+    width: 100%;
+    height: 3vh;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, rgba(173, 210, 254, 0), $background-color)
+  }
+}
+
+html, body{
+  position: relative;
+  background-color: #fcfcfc; // #f8f9fa 科技白XD #fcfcfc 是稿紙白?
+  color: #342c2c; //文青黑？
+  background-position: center top;
+  background-size: 30px 30px;
+  background-image: linear-gradient(to right,rgba(37,82,110,.1) 1px,transparent 1px),linear-gradient(to bottom,rgba(37,82,110,.1) 1px,transparent 1px);
+}
+@media (max-width: 767.98px){
+  body{
+    background-size: 22px 22px;
+  }
+}
+
+
+main {
+  margin-top: 80vh;
+}
+// 以上都是為了難搞的img parallax
+
+
+.storyNow{
+  background-color: $background-color;
+  img {
+  // mix-blend-mode: multiply;
+  }
+  .fas{
+    color: #91B493;
+  }
+}
+  
+.letterWall{
+  // border: 2px solid green;
+}
+
+.card{
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2), 0 1px 10px 0 rgba(0,0,0,0.12), 0 4px 5px 0 rgba(0,0,0,0.14);
+}
+
+.special{
+  // white-space: pre-line;
+}
+
+.card-footer{
+  // background-color: #91B49322;
+}
+
+.card-text{
+  white-space: pre-wrap;
+}
+
+.storyBehind{
+  background-color: $background-color;
+  background-image: url(https://lh5.googleusercontent.com/TWdjlV99x4t9dVJWsTALjelPs2sTL2k_zrVZNztvnvUe-2IU7CIH5N4d7dezaCIKH8OkMAXUZncTZwpLt6Wy=w1920-h920);
+  .h5 .border-start .border-5{
+    border-color: black;
+  }
+}
+// border 顏色寫了!important蓋不掉，還會影響動畫效果嗚嗚
+
+
+.googleForm{
+  background-color: #f8f9fa; //科技白
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2), 0 1px 10px 0 rgba(0,0,0,0.12), 0 4px 5px 0 rgba(0,0,0,0.14);
+}
+
+.googleForm{
+  h3.border-5{
+    border-color: $theme-color;
+    // border 顏色寫了!important蓋不掉，還會影響動畫效果嗚嗚
+  }
+  .btn{
+    background-color: #91B493;
+    border: none;
+  }
+}
+
+// 以下是無情的去白背方法 https://codepen.io/dovidweisz/pen/PyyZbe
+@function opacitator($color){
+  $hi: 1;
+  $lo: 0;
+  $tol: 0.01;
+  $rgbs: (red($color) green($color) blue($color));
+  
+  @while($hi - $lo > $tol){
+    $m: $lo + (($hi - $lo) / 2);
+    @if(getOpositesForOpacity($m, $rgbs, true)){
+      $hi: $m;
+    }
+    @else{
+      $lo: $m;
+    }
+  }
+  $rgbs: getOpositesForOpacity($hi, $rgbs);
+  @return rgba( nth($rgbs, 1), nth($rgbs, 2), nth($rgbs, 3), $hi);
+}
+
+
+@function getOpositesForOpacity($opacity, $rgbs, $returnValidity: false){
+    $newList: ();
+    $valid: true;
+    @each $c in $rgbs{
+      $newVal: oppositeForOpacity($opacity, $c);
+      @if( $newVal >= 0 ){
+         $newList: append($newList, $newVal);
+      }
+      @else{
+        @return false; 
+      }
+    }
+    @if($returnValidity ){
+      @return $valid;
+    }
+    @else{
+        @return $newList;
+    }
+}
+
+
+@function oppositeForOpacity($opacity, $c){
+    @return 255 - ( 255 - $c ) / $opacity;
+}
+
+.layerd {
+  position: relative;
+  &::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: opacitator($background-color);
+  }
+}
