@@ -1,0 +1,106 @@
+header img.imgFixed {
+  position: fixed;
+  z-index: -1;
+  top: 40vh;
+  transform: translateY(-55%);
+  object-fit: cover;
+}
+
+.imgContainer {
+  border: none;
+  margin: 0;
+  padding: 0;
+  height: 80vh;
+  position: absolute;
+  clip: rect(0, auto, 80vh, 0);
+  top: -80vh;
+}
+.imgContainer h1 {
+  letter-spacing: 2rem;
+  text-indent: 2rem;
+}
+.imgContainer .h5 {
+  letter-spacing: 0.8rem;
+  text-indent: 0.8rem;
+}
+.imgContainer .bgGradient {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  width: 100%;
+  height: 3vh;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, rgba(173, 210, 254, 0), #D7C4BB);
+}
+
+html, body {
+  position: relative;
+  background-color: #fcfcfc;
+  color: #342c2c;
+  background-position: center top;
+  background-size: 30px 30px;
+  background-image: linear-gradient(to right, rgba(37, 82, 110, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(37, 82, 110, 0.1) 1px, transparent 1px);
+}
+
+@media (max-width: 767.98px) {
+  body {
+    background-size: 22px 22px;
+  }
+}
+main {
+  margin-top: 80vh;
+}
+
+.storyNow {
+  background-color: #D7C4BB;
+  font-family: "chungtf";
+  font-weight: 500;
+}
+.storyNow .fas {
+  color: #91B493;
+}
+
+.letterWall {
+  font-family: "jf-jinxuan";
+  font-weight: 500;
+}
+
+.card {
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.14);
+}
+
+.storyBehind {
+  background-color: #D7C4BB;
+  background-image: url(https://lh5.googleusercontent.com/TWdjlV99x4t9dVJWsTALjelPs2sTL2k_zrVZNztvnvUe-2IU7CIH5N4d7dezaCIKH8OkMAXUZncTZwpLt6Wy=w1920-h920);
+}
+.storyBehind .h5 .border-start .border-5 {
+  border-color: black;
+}
+
+.googleForm {
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.14);
+}
+
+.googleForm h3.border-5 {
+  border-color: #FFC408;
+}
+.googleForm .btn {
+  background-color: #91B493;
+  border: none;
+}
+
+.layerd {
+  position: relative;
+}
+.layerd::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(109, 39, 6, 0.2734375);
+}

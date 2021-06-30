@@ -12,7 +12,10 @@
   <!-- Bootstrap CSS -->
   <link href="scss/all.css" rel="stylesheet">
 
-  <title>Hello, world!</title>
+  <!-- Justfont -->
+  <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-62833.js"></script>
+
+  <title>那些限制下的選擇、自由與祝福</title>
 </head>
 
 <body>
@@ -27,15 +30,30 @@
     <section class="storyNow container-fluid py-5 mb-4" id="skrollr-body">
       <div class="container">
             <div class="row">
-              <div class="col-md-5" data-bottom-top="transform: translateX(-25vw); opacity: 0" data-center="transform: translateX(0); opacity: 1">
+              <div class="col-md-5 d-flex align-items-center" data-bottom-top="transform: translateX(-25vw); opacity: 0" data-center="transform: translateX(0); opacity: 1">
                 <div class="layerd">
                   <img class="w-100" src="https://image.freepik.com/free-vector/coding-programmer-laptop-internet-work-concept-hand-drawn-hand-programmer-laptop-with-code-concept-sketch_160308-2737.jpg" alt="">          
                 </div>
               </div>
-              <div class="col-md-7 d-flex flex-column justify-content-center text-center">
-                <strong class="h3 lh-lg my-5" data-bottom-top="opacity: 0" data-center="opacity: 1">
-                  <i class="fas fa-quote-left"></i>&emsp;程式是一種樂趣，是訴說想像的語言無須畏懼。&ensp;<i class="fas fa-quote-right"></i>
-                </strong>
+              <div class="col-md-7 d-flex justify-content-center align-items-center position-relative my-5">
+                
+                  <div class="col-1 h-100 d-flex flex-row-reverse flex-column">
+                    <i class="fas fa-quote-left fs-2"></i>
+                  </div>
+                  <div class="col-10 text-center">
+                    <strong class="h3 lh-lg text-start p-3 my-5" data-bottom-top="opacity: 0" data-center="opacity: 1">
+                      程式是一種樂趣，是訴說想像的語言無須畏懼。
+                    </strong>
+                  </div>
+                  <div class="col-1 h-100 d-flex flex-column-reverse">
+                    <i class="fas fa-quote-right fs-2"></i>
+                  
+                  
+                </div>
+                
+                </div>
+                
+
               </div> 
       </div>
       </div>
@@ -130,7 +148,7 @@
       <div class="col-12 col-md-6 col-lg-4 mb-4">
         <div class="card">
           <div class="card-body pb-0">
-            <p class="special">"只要簡單技巧就能讓海綿蛋糕像棉花糖一樣入口即化，對初學者而言也相當簡單喔！
+            <p id="fullText">"只要簡單技巧就能讓海綿蛋糕像棉花糖一樣入口即化，對初學者而言也相當簡單喔！
   
   _____
   
@@ -224,21 +242,24 @@
   
   真的不得已沒有立刻吃完，密封拉鍊袋室溫約可以保存2-3天。
   
-  密封冷藏保存約7天，密封冷凍保存約3個月。吃之前解凍回溫。"</p>
+  密封冷藏保存約7天，密封冷凍保存約3個月。吃之前解凍回溫。"
+            </p>
             <p class="text-end text-muted">程式hold得住嗎(好mean啊</p>
           </div>
           <div class="card-footer py-3">
             <p class="text-muted">To 
             <span>程式hold得住嗎(好mean啊</span>            
             </p>
-            <p class="card-text">Hold...不太住 ヽ༼⊙_⊙༽ﾉ。那你蛋糕做好了嗎，想吃www</p>
+            <p class="card-text">Hold...不太住 ヽ༼⊙_⊙༽ﾉ。那你蛋糕做好了嗎，
+              <a id="changeBtn" onclick="change()" class="text-decoration-none"></a>
+            www</p>
           </div>
         </div>
       </div>  
       <div class="col-12 col-md-6 col-lg-4 mb-4">
         <div class="card">
           <div class="card-body pb-0">
-            <p>松偉請加油😍😍😍罩我</p>
+            <p>松偉請加油😍😍😍 罩我</p>
             <p class="text-end text-muted">君弘</p>
           </div>
           <div class="card-footer py-3">
@@ -253,16 +274,16 @@
     <section class="storyBehind container-fluid d-block mb-4" id="skrollr-body" data-bottom-top="transform: translateY(15vh); opacity: 0" data-center-top="transform: translateY(0); opacity: 1">
       <article class="container py-3">
         <h2 class="my-4">文字牆背後的緣由</h2>
-        <p class="h5 fw-normal border-start border-5 ps-3 mb-4">這是兩年前寫的，現在看到好尷尬呀：</p>
-        <p>一不小心就要進醫院了，於是開始省思人生(?</p>
+        <p class="h5 fw-normal border-start border-5 ps-3 mb-4">這是兩年前寫的，好尷尬（摀眼）</p>
+        <p>一不小心就要進醫院了，於是開始省思人生（？</p>
         <br>
-        <p>在大學過了這些年，好像學到了什麼；再努力回想，卻又好像什麼都沒學到</p>
+        <p>在大學過了這些年，好像學到了什麼；再努力回想，卻又好像什麼都沒學到。</p>
         <br>
-        <p>只記得那些日子遇到一些人，一起經歷過這些事</p>
+        <p>只記得那些日子遇到一些人，一起經歷過這些事。</p>
         <br>
-        <p>如同授袍頭貼，自己其實是一個 Introvert，習慣把一些人默默放在心上的內向仔。只是每當看到別人的動態或夜深人靜發現聊天室同樣亮著綠點的晚睡仔，就會想起曾經一起經歷的事情，或著曾經一起分享的心情。</p>
+        <p>如同授袍頭貼，自己其實是一個 Introvert，習慣把一些人默默放在心上的內向仔。只是每當看到別人的動態，或者夜深人靜時發現聊天室同樣亮著綠點的晚睡仔，就會想起曾經一起經歷的事情，或著曾經一起分享的心情。</p>
         <br>
-        <p>所以，雖然我找不太到授袍的意義，但如果能藉由這樣一個儀式性的所謂授袍典禮，小廢仔如我可以收集螢幕那一頭的你們對我的一些問候、祝福或嘴砲(反正可以匿名）；即使我們可能從此不再見面(開玩笑的)，或是自一個時間點後就不太熟，但未來在某些時刻看到這些文字，總會想起什麼吧:))</p>
+        <p>所以，雖然我找不太到授袍的意義，但如果能藉由這樣一個儀式性的所謂授袍典禮，小廢仔如我可以收集螢幕那一頭的你們對我的一些問候、祝福或嘴砲（反正可以匿名）；即使我們可能從此不再見面（開玩笑的），或是自一個時間點後就不太熟，但未來在某些時刻看到這些文字，總會想起什麼吧:))</p>
         <br>
         <p>既然你都這麼有耐心看到這裡了，順手隨便再打幾個字都好◝(･'ω'･)◟ 
     (真的隨意～)</p>
@@ -270,7 +291,7 @@
     
     </section> 
     <section class="googleForm container border rounded p-4 mb-4" id="skrollr-body" data-bottom-top="transform: translateY(15vh); opacity: 0" data-center-top="transform: translateY(0); opacity: 1">
-      <h3 class="border-start border-5 fs-6 fw-normal lh-lg ps-3 mb-4">當年表單的復刻，不過目前還無法即時動態載入在上方的文字牆。如果現在還想要留個文字看看的話，我再手動寫程式幫你刻上去 (´∀`) ，但就不保證回覆時間了哈。</h3>
+      <h3 class="border-start border-5 fs-6 fw-normal lh-lg ps-3 mb-4">當年表單的復刻，不過目前還無法即時動態載入在上方的文字牆。如果現在還想要留個文字看看的話，我再手寫幫你刻上去 (´∀`) ，但就不保證回覆時間了哈。</h3>
       <form>
         <!--   textarea -->
         <div class="mb-4">
@@ -323,5 +344,30 @@
   <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js'></script>
   <script  src="./script.js"></script>
+  <script>
+    var text;
+    function show() {
+        text = document.getElementById("fullText").innerHTML;
+        if(text.length > 100) {
+            document.getElementById("changeBtn").innerHTML = "想吃";
+        } else {
+            document.getElementById("changeBtn").innerHTML = "";
+        }
+    }
+    function change() {
+        var t = document.getElementById("changeBtn");
+        var tt = document.getElementById("fullText");
+        if(t.innerHTML == "想吃") {
+            tt.innerHTML = text.substring(0, 188) + "...... ಥ_ಥ ";
+            t.innerHTML = "🎂"
+            // ttt.innerHTML = "......"
+        } else {
+            tt.innerHTML = text;
+            t.innerHTML = "想吃"
+            // ttt.innerHTML = ""
+        }
+    }
+    show();
+  </script>
 </body>
 </html>

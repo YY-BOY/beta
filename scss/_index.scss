@@ -69,32 +69,21 @@ main {
 
 .storyNow{
   background-color: $background-color;
-  img {
-  // mix-blend-mode: multiply;
-  }
+  font-family: "chungtf";
+  font-weight: 500;
+
   .fas{
     color: #91B493;
   }
 }
-  
+
 .letterWall{
-  // border: 2px solid green;
+  font-family: "jf-jinxuan";
+  font-weight: 500;
 }
 
 .card{
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2), 0 1px 10px 0 rgba(0,0,0,0.12), 0 4px 5px 0 rgba(0,0,0,0.14);
-}
-
-.special{
-  // white-space: pre-line;
-}
-
-.card-footer{
-  // background-color: #91B49322;
-}
-
-.card-text{
-  white-space: pre-wrap;
 }
 
 .storyBehind{
