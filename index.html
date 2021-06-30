@@ -251,7 +251,7 @@
             <span>程式hold得住嗎(好mean啊</span>            
             </p>
             <p class="card-text">Hold...不太住 ヽ༼⊙_⊙༽ﾉ。那你蛋糕做好了嗎，
-              <a id="changeBtn" onclick="change()" class="text-decoration-none"></a>
+              <a id="changeBtn" onclick="change()" class="text-decoration-none" role="button"></a>
             www</p>
           </div>
         </div>
@@ -294,22 +294,22 @@
     </section> 
     <section class="googleForm container xingothic-tc-w5 border rounded p-4 mb-4" id="skrollr-body" data-bottom-top="transform: translateY(15vh); opacity: 0" data-center-top="transform: translateY(0); opacity: 1">
       <h3 class="border-start border-5 fs-6 fw-normal lh-lg ps-3 mb-4">當年表單的復刻，不過目前還無法即時動態載入在上方的文字牆。如果現在還想要留個文字看看的話，我再手寫幫你刻上去 (´∀`) ，但就不保證回覆時間了哈。</h3>
-      <form>
+      <form id="form" class="needs-validation" novalidate>
         <!--   textarea -->
         <div class="mb-4">
-          <label for="demo_textarea" class="form-label">留言內容 (也可以打很長XD) </label>
-          <textarea class="form-control" id="demo_textarea" rows="3"> </textarea>
+          <label for="demo_textarea" class="form-label" required>留言內容 (也可以打很長XD) </label>
+          <textarea class="form-control" id="demo_textarea" rows="3" required> </textarea>
           <div id="namelHelp" class="form-text">你的留言會出現在動態文字牆上喔</div>
         </div>    
         <!--   text -->
         <div class="mb-4">
-          <label for="demo_name" class="form-label">署名/筆名</label>
-          <input type="name" class="form-control" id="demo_name" aria-describedby="nameHelp">
+          <label for="demo_name" class="form-label" required>署名/筆名</label>
+          <input type="name" class="form-control" id="demo_name" aria-describedby="nameHelp" required>
         </div>
         <!--   select -->
         <div class="mb-4">
           <p>想要怎麼我怎麼回應呢～</p>
-          <select class="form-select" id="demo_select" aria-label="Default select example">
+          <select class="form-select" id="demo_select" aria-label="Default select example" required>
             <option value="0" selected disabled>請選擇</option>
             <option>文字牆</option>
             <option value="汪汪" disabled>信件</option>
@@ -346,6 +346,28 @@
   <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js'></script>
   <script  src="./script.js"></script>
+  
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+  </script>
+  
   <script>
     var text;
     function show() {
